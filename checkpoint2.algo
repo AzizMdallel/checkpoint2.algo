@@ -1,0 +1,70 @@
+//FISRT TASK
+
+ALGORITHM Dot product
+FUNCTION Dot_product(v1,v2) : FLOAT
+VAR
+ps : FLOAT
+i : INTEGER
+lv1 : in
+BEGIN
+    if ( v1.length ≠ v2.length ){
+        Write("errur les 2 vecteurs n'ont pas la même  longueur")
+    }
+    ps=0
+    for i from 1 to v1.length{
+        ps= ps + v1[i] * v2[i]
+    }
+    RETURN ps ;
+END
+
+PROCEDURE orth(v1,v2)
+VAR
+    ps : FLOAT
+    
+BEGIN
+    ps = Dot_product(v1,v2)
+    IF (ps = 0) THEN
+        
+        RETURN True
+    ELSE
+       RETURN False
+    END_IF
+END
+
+//programme princpal
+VAR
+N : INTEGER
+i : INTEGER
+for i from 1 to N {
+    Write("donner le 1er vecteur de la paire n°", i)
+    Read(v1)
+    Write("donner le 2me vecteur de la paire n°", i)
+    Read(v2)
+    Dot_product(v1,v2)
+    IF (orth(v1,v2)) THEN
+        Write("les 2 vecteurs sont orthogonaux ")
+    ELSE
+        Write("les 2 vecteurs ne sont pas orthogonaux ")
+   
+}
+
+
+//SECOND TASK 
+FUNCTION insertion_sort(arr) : 
+VAR
+    i : INTEGER
+    j : INTEGER
+    key : INTEGER
+BEGIN
+    FOR i FROM 1 TO arr.length STEP 1  DO
+        key=arr[i]
+        j= i-1
+        WHILE (j>=0 AND arr[j]> key) DO
+            arr[j+1]= arr[j]
+            j=j-1
+            arr[j+1]=key
+        END_WHILE
+    END_FOR
+    RETURN value ;
+END
+
